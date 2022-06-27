@@ -1,18 +1,16 @@
 import Head from "next/head";
-import React, { useContext } from "react";
+import React from "react";
 import { Container, Stack, Button } from "react-bootstrap";
 import { useRouter } from "next/router";
-import { Context } from "../../context/MainContext";
 
 const CancelPaymentPage = () => {
   const router = useRouter();
-  const { items } = useContext(Context);
-  console.log(items);
-  const generateRandomProduct = () => {
-    const randomIndex = Math.floor(Math.random() * items.length);
-    const randomProduct = items[randomIndex];
-    return randomProduct;
-  };
+  // const { items } = useContext(Context);
+  // const generateRandomProduct = () => {
+  //   const randomIndex = Math.floor(Math.random() * items.length);
+  //   const randomProduct = items[randomIndex];
+  //   return randomProduct;
+  // };
   const backToHomePage = () => {
     router.push("/");
   };
@@ -27,7 +25,6 @@ const CancelPaymentPage = () => {
       >
         <h1>You was refuse to pay...</h1>
         <p>Maybe should looking for cup more curious</p>
-        {JSON.stringify(generateRandomProduct())}
         <Button onClick={backToHomePage} variant="outline-success">
           Back to Shopping
         </Button>

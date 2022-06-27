@@ -1,6 +1,8 @@
 import React from "react";
-import { Card, Button, Stack, Placeholder } from "react-bootstrap";
-import Link from "next/link";
+import { Card } from "react-bootstrap";
+
+//lazy loading components:
+const Link = React.lazy(() => import("next/link"));
 
 const CardItem = ({ product: { name, images, default_price, id } }) => {
   return (
@@ -17,4 +19,4 @@ const CardItem = ({ product: { name, images, default_price, id } }) => {
   );
 };
 
-export default CardItem;
+export default React.memo(CardItem);
