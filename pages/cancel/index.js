@@ -24,7 +24,7 @@ const CancelPaymentPage = () => {
         className="d-flex justify-content-center text-center align-items-center min-vh-100 justify-content-center"
       >
         <h1>You was refuse to pay...</h1>
-        <p>Maybe should looking for cup more curious</p>
+        <p>A lot of cups in our store</p>
         <Button onClick={backToHomePage} variant="outline-success">
           Back to Shopping
         </Button>

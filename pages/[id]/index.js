@@ -1,3 +1,4 @@
+/* eslint-disable @next/next/no-sync-scripts */
 // @ts-nocheck
 import Head from "next/head";
 import Link from "next/link";
@@ -9,6 +10,8 @@ import { Context } from "../../context/MainContext";
 import { stripe } from "../../stripe";
 import axios from "axios";
 import getStripe from "../../lib/getStripe";
+import { ArrowLeft } from "react-bootstrap-icons";
+import Script from "next/script";
 
 const ProductDetail = ({ product, price }) => {
   const { count, addCount, minusCount } = useContext(Context);
@@ -75,11 +78,10 @@ const ProductDetail = ({ product, price }) => {
         <>
           <Stack className="col-sm-3">
             <Link href="/">
-              {/* <FontAwesomeIcon icon={solid("arrow-left")} /> */}
-              Back
+              <i className="fa-solid fa-arrow-left-long"></i>
             </Link>
           </Stack>
-          <Stack gap={3} className="col-lg-5 r-lg-1 mx-auto w-xl-25 w-sm-100">
+          <Stack gap={3} className="col-lg-5 r-lg-1 mx-auto w-xl-25 w-sm-50">
             <Image
               fluid
               src={product?.images[0]}
@@ -100,11 +102,10 @@ const ProductDetail = ({ product, price }) => {
         <>
           <Stack className="col-sm-3">
             <Link href="/">
-              {/* <FontAwesomeIcon icon={solid("arrow-left")} /> */}
-              Back
+              <ArrowLeft size={30} role="button" />
             </Link>
           </Stack>
-          <Stack gap={3} className="col-lg-5 r-lg-1 mx-auto w-xl-25 w-sm-100">
+          <Stack gap={3} className="col-lg-5 r-lg-1 mx-auto w-xl-25 w-md-50">
             <Image
               fluid
               src={product?.images[0]}
@@ -117,9 +118,10 @@ const ProductDetail = ({ product, price }) => {
             direction="horizontal"
             className="d-flex align-items-center col-lg-5 mx-auto my-3"
           >
-            <p className="mb-0 mr-1">{card}</p>
+            <p className="mb-0">{card}</p>
             <Button
               size="sm"
+              style={{ marginLeft: "10px" }}
               variant={isCopied ? "success" : "outline-info"}
               onClick={copyCard}
             >
