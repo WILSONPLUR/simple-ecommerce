@@ -8,7 +8,7 @@ const SkeletonCard = ({ changeLoad, load, product }) => {
   useEffect(() => {
     setTimeout(() => {
       changeLoad(false);
-    }, 3000);
+    }, 1500);
   });
   return (
     <>

@@ -64,7 +64,7 @@ const ProductDetail = ({ product, price }) => {
   useEffect(() => {
     setTimeout(() => {
       setLoading(false);
-    }, 3000);
+    }, 1500);
   }, [loading]);
   return (
     <Container fluid="xl" className="mb-3 mx-auto">
